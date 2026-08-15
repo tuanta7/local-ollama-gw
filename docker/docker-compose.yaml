@@ -1,0 +1,15 @@
+name: ollama-gateway
+services:
+  nginx:
+    image: nginx:1.31.3-alpine3.24
+    container_name: ollama-gateway-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - ollama-net
+
+networks:
+  ollama-net:
+    driver: bridge
