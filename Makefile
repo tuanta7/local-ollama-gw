@@ -70,4 +70,6 @@ run-nginx:
 
 stop-nginx:
 	brew services stop nginx
-	
+
+install-cloudflared:
+	brew install cloudflared
