@@ -73,3 +73,11 @@ stop-nginx:
 
 install-cloudflared:
 	brew install cloudflared
+
+run-cloudflared:
+	sudo cloudflared service install $(MODEL)
+# 	sudo shutdown -r now
+
+stop-cloudflared:
+	sudo cloudflared service uninstall
+	kill $(shell ps aux | grep cloudflared | grep -v grep | awk '{print $$2}')
